@@ -1,0 +1,115 @@
+\documentclass{article}
+\usepackage{subcaption}
+\usepackage{geometry}
+\usepackage{ctex}
+\usepackage{cite}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+\usepackage{booktabs}
+\usepackage{pifont}
+\usepackage{bm}
+
+\begin{document} 
+    \noindent \Large \textbf{1.求证：\bm{$\frac{1^{2}}{1^{2}+1}+\frac{2^{2}}{2^{2}+1}+...+\frac{n^{2}}{n^{2}+1}\leqslant \frac{n^{2}}{n+1}$}} \\
+    证：$\because\frac{n^{2}}{n^{2}+1}=1-\frac{1}{1+n^{2}}$，$\frac{n^{2}}{n+1}=n-\frac{n}{n+1}$ \\
+    $\therefore $\quad 只需证：$\left( 1-\frac{1}{1^2+1}\right) +\left( 1-\frac{1}{2^2+1}\right) +...+\left( 1-\frac{1}{n^2+1}\right) \leqslant n-\frac{n}{n+1}$ \\
+    \hspace*{0.75cm} 即证：$\frac{n}{n+1}\leqslant \frac{1}{1^2+1}+\frac{1}{2^2+1}+...+\frac{1}{n^2+1}$ \\
+    又$\because\frac{1}{n^{2}+1}\geqslant \frac{1}{n^{2}+n}=\frac{1}{n}-\frac{1}{n+1} $ \\
+    $\therefore $\quad $\sum_{i = 1}^{n}  \frac{1}{i^{2}+1}\geqslant \sum_{i=1}^{n}\left(\frac{1}{i}-\frac{1}{i+1}\right) =\frac{n}{n+1}$ \\
+    $\therefore $\quad $\frac{1^{2}}{1^{2}+1}+\frac{2^{2}}{2^{2}+1}+...+\frac{n^{2}}{n^{2}+1}\leqslant \frac{n^{2}}{n+1}$ \\
+    \\\\
+
+    \noindent\textbf{2.正项数列{\bm{$a_n$}}，\bm{$a_n=\frac{n}{n^4+4}$}，求前\bm{$n$}项和\bm{$S_n$}} \\
+    解：$\because a_n=\frac{n}{n^4+4}=\frac{n}{\left(n^2-2n+2\right)\left(n^2+2n+2\right)}=\frac{1}{4}\left[\frac{1}{\left(n-1\right)^2+1}-\frac{1}{\left(n+1\right)^2+1}\right]$ \\
+        \begin{equation}
+        \begin{aligned}
+            \therefore \quad S_n & =  \frac{1}{4}\left[\frac{1}{\left(1-1\right)^2+1}-\frac{1}{\left(1+1\right)^2+1}+\frac{1}{\left(2-1\right)^2+1}-\frac{1}{\left(2+1\right)^2+1}\right. \\
+            & \quad \left. +\frac{1}{\left(3-1\right)^2+1}-\frac{1}{\left(3+1\right)^2+1}+\frac{1}{\left(n-2\right)^2+1}-\frac{1}{\left(n\right)^2+1}\right. \\
+            \phantom{=\;\;}
+            & \quad \left. +\frac{1}{\left(n-1\right)^2+1}-\frac{1}{\left(n+1\right)^2+1}\right] \\
+            & =\frac{1}{4}\left[1+\frac{1}{2}-\frac{1}{n^2+1}-\frac{1}{\left(n+1\right)^2+1}\right] \\
+            & = \frac{3}{8}-\frac{1}{4}\left[\frac{1}{n^2+1}+\frac{1}{\left(n+1\right)^2+1}\right]
+            \nonumber
+        \end{aligned}
+        \end{equation} 
+
+    \newpage
+    \noindent \textbf{3.已知椭圆C:\bm{$x^2+\frac{y^2}{e^2}=m(m>0,e\approx 2.718...)$}与\bm{$f(x)=lnx$}交于A，B两点，A点横坐标为\bm{$x_1$}，B点横坐标为\bm{$x_2$}，\bm{$x_{1}x_{2}<1$}，求证：\bm{$x_{1}x_{2}<e^{-2}$}} \\
+    证：联立方程可得：$x_1^2+\frac{\left(lnx_1\right)^2}{e^2}=x_2^2+\frac{\left(lnx_2\right)^2}{e^2}=m$ \\
+    $\therefore $\quad $x_1^2-x_2^2=\frac{\left(lnx_{2}-lnx_{1}\right)\left(lnx_{2}+lnx_{1}\right)}{e^2}=\frac{ln\frac{x_2}{x_1}lnx_{1}x_{2}}{e^2}$ \\
+    $\therefore $\quad $lnx_{1}x_{2}=\frac{e^{2}\left(x_1^2-x_2^2\right)}{ln\frac{x_2}{x_1}}=\frac{e^{2}\left(x_1^2-x_2^2\right)}{x_{1}x_{2}ln\frac{x_2}{x_1}}x_{1}x_{2}=\frac{e^{2}\left(\frac{x_1}{x_2}-\frac{x_2}{x_1}\right)}{ln\frac{x_2}{x_1}}x_{1}x_{2}$ \\
+    设$x_{2}>x_{1}$，令$t=\frac{x_2}{x_1}>1$，则$lnx_{1}x_{2}=\frac{e^{2}\left(\frac{1}{t}-t\right)}{lnt}x_{1}x_{2}$ \\
+    令$g(t)=2lnt-t+\frac{1}{t}$，$g^{'}(t)=\frac{-t^2+2t-1}{t^2}=\frac{-\left(t-1\right)^2}{t^2}<0$ \\
+    $\therefore $\quad $g(t)<g(1)=0$，即$2lnt<t-\frac{1}{t}$ \\
+    $\therefore $\quad $lnx_{1}x_{2}=-2e^{2}x_{1}x_{2}\left(\frac{t-\frac{1}{t}}{2lnt}\right)<-2e^{2}x_{1}x_{2}$ \\
+    $\therefore $\quad $lnx_{1}x_{2}+2e^{2}x_{1}x_{2}<0$ \\
+    令$p=x_{1}x_{2}<1$，$\varphi (p)=lnp+2e^{2}p$，$\varphi ^{'}(p)=\frac{1}{p}+2e^2>0$ \\
+    $\because $\quad $\varphi (p)<0=\varphi (e^{-2})$ \\
+    $\therefore $\quad $p<e^{-2}$ \\
+    $\therefore $\quad $x_{1}x_{2}<e^{-2}$ 
+
+    \newpage
+    \noindent \textbf{4.\bm{$f(x)=lnx+\tan x$}，求证：\bm{$f(x)+f^{'}(x)>\frac{7}{4}$}} \\
+    证：$\because $\quad $f^{'}(x)=\frac{1}{x}+\frac{1}{\cos^2 x}$ \\
+    $\therefore $\quad $f(x)+f^{'}(x)=lnx+\tan x+\frac{1}{x}+\frac{1}{\cos^2 x}=\left(lnx+\frac{1}{x}\right)+\left(\tan x+\frac{1}{\cos^2 x}\right)$ \\
+    令$g(x)=lnx+\frac{1}{x}$，则$g^{'}(x)=1-\frac{1}{x^2}$ \\
+    $\therefore $\quad $g(x)$在$(0,1]$上递减，$(1,+\infty )$上递增 \\
+    $\therefore $\quad $g(x)\geqslant g(1)=1$ \\
+    又$\because $\quad $\tan x+\frac{1}{\cos^2 x}=\tan x+\frac{\sin^2 x+\cos^2 x}{\cos^2 x}=\left(\tan x+\frac{1}{2}\right)^2+\frac{3}{4}\geqslant \frac{3}{4}$ \\
+    $\therefore $\quad $f(x)+f^{'}(x)>\frac{7}{4}$\quad (等号不同时成立) \\
+    
+    \newpage
+    \noindent \textbf{5.若\bm{$f(x)$}满足当\bm{$x\geqslant 0$}时，有\bm{$2f(x)\leqslant f(e^{x}-1)+f[ln(x+1)]$}恒成立，则称\bm{$f(x)$}为“凹凸函数” \\
+    (1)求所有可称为凹凸函数的一次函数 \\
+    (2)证明：存在凹凸函数\bm{$g(x)$}，使得\bm{$\varphi (x)=g^{2}(x)$}也为凹凸函数} \\
+    解：(1)设$f(x)=kx+b$，代入条件可得：\\
+    \hspace*{1.7cm} $k\left(e^{x}+ln(x+1)-2x-1\right)\geqslant 0$\quad\ding{172} \\
+    令$\tau (x)=e^x+ln(x+1)-2x-1$，则$\tau^{'} (x)=e^x+\frac{1}{1+x}-2$， \\
+    $\tau^{''}(x)=e^x-\frac{1}{(1+x)^2}\geqslant e^0-\frac{1}{(1+0)^2}=0$ \\
+    $\therefore $\quad $\tau^{'}(x)$在$[0,+\infty )$单调递增 \qquad $\therefore $\quad $\tau^{'}(x)\geqslant \tau^{'}(0)=0$ \\
+    $\therefore $\quad $\tau(x)$在$[0,+\infty )$单调递增 \qquad $\therefore $\quad $\tau^(x)\geqslant \tau(0)=0$ \\
+    $\therefore $\quad 当$k>0$时，\ding{172}式成立 \\
+    (2)下证$g(x)=x$，$\varphi (x)=x^2$满足条件： \\
+    由(1)可知：$e^{x}+ln(x+1)-1\geqslant 2x$ \\
+    由柯西不等式：$\left[\left(e^{x}-1\right)^2+\left(ln(x+1)\right)^2\right]\left(1^{2}+1^{2}\right)\geqslant \left[e^{x}-1+ln(x+1)\right]^2$ \\
+    \hspace*{11.5cm} $\geqslant \left(2x\right)^2$ \\
+    $\therefore $\quad $\left(e^{x}-1\right)^2+\left[ln(x+1)\right]^2\geqslant 2x^2$ \\
+    $\therefore $\quad $\varphi (e^{x}-1)+\varphi [ln(x+1)]\geqslant 2\varphi (x)$ \\
+    $\therefore $\quad $\varphi (x)=x^2$也是凹凸函数 \\
+
+    \newpage
+    \noindent \textbf{6.\bm{$f(x)=aln(x+1)-\sqrt{x}$} \\
+    (1)若\bm{$f(x)$}在定义域内单调递减，求\bm{$a$}的范围 \\
+    (2)求证：\bm{$\frac{3}{2}lnn!<\sqrt{n^3}$}} \\
+    解：(1)\quad $\because $\quad $f^{'}(x)=\frac{a}{x+1}-\frac{1}{2\sqrt{x}}\leqslant 0$ \\
+    $\therefore $\quad $a\leqslant \frac{x+1}{2\sqrt{x}}$ \\
+    又$\because $\quad $\frac{x+1}{2\sqrt{x}}=\frac{1}{2}\left(\sqrt{x}+\frac{1}{\sqrt{x}}\right)\geqslant \frac{1}{2}\cdot 2\sqrt{\sqrt{x}\cdot\frac{1}{\sqrt{x}}}=1$ \\
+    $\therefore $\quad $a\leqslant 1$ \\
+    (2)由(1)知，当$a=1$时，$f(x)$在定义域内单调递减 \\
+    $\therefore $\quad 当$x\geqslant 0$时，$f(x)=ln(x+1)-\sqrt{x}\leqslant f(0)=0$ \\
+    $\therefore $\quad 对$\forall n\in N^+$，有$lnn\leqslant \sqrt{n-1}$ \\
+    $\therefore $\quad $lnn!=\sum_{i = 1}^{n} lni\leqslant \sum_{i = 1}^{n} \sqrt{i-1}=\sum_{i = 1}^{n-1} \sqrt{i}$ \\
+    $\because $\quad $\sum_{i = 1}^{n-1} \sqrt{i}=\left(\sqrt{1}\cdot 1+\sqrt{2}\cdot 1+...+\sqrt{n-1}\cdot 1\right)<\int_{0}^{n}\sqrt{x}\,dx$ \\
+    \hspace*{11.4cm} $ =\frac{2}{3}\sqrt{n^3}$ \\
+    $\therefore $\quad $\frac{3}{2}lnn!<\sqrt{n^3}$ \\
+
+    \newpage
+    \noindent \textbf{7.已知\bm{$f(x)=\frac{e^{x}-e^{-x}}{2}(x\geqslant 0)$}，\bm{$g(x)=\frac{e^{x}+e^{-x}}{2}(x\geqslant 0)$} \\
+    (1)求证： \\
+    \quad \ding{172} \bm{$f(x+y)=f(x)g(y)+g(x)f(y)$} \\
+    \quad \ding{173} \bm{$f(2x)=2f(x)g(x)$}  \\
+    (2)\bm{$\forall x,y,z\in [0,+\infty)$}，有\bm{$\left[f(x)+f(y)+f(z)\right]\left[g(x)+g(y)+g(z)\right]\geqslant k(x+y+z)$}恒成立，求\bm{$k$}的最大值} \\
+    解：(1)第\ding{172}问直接计算就行，第\ding{173}问令$y=x$ \\
+    (2)$\left[f(x)+f(y)+f(z)\right]\left[g(x)+g(y)+g(z)\right]$ \\
+    $=f(x)g(x)+f(x)g(y)+f(x)g(z)+f(y)g(x)+f(y)g(y)+f(y)g(z)$ \\
+    \hspace*{0.35cm} $+f(z)g(x)+f(z)g(y)+f(z)g(z)$ \\
+    $=\frac{1}{2}f(2x)+\frac{1}{2}f(2y)+\frac{1}{2}f(2z)+f(x+y)+f(x+z)+f(y+z)$ \\
+    不等式转化为： \\
+    $\frac{1}{2}\left[f(2x)-\frac{2kx}{3}\right]+\frac{1}{2}\left[f(2y)-\frac{2ky}{3}\right]+\frac{1}{2}\left[f(2z)-\frac{2kz}{3}\right]+\left[f(x+y)-\frac{k(x+y)}{3}\right]+\left[f(x+z)-\frac{k(x+z)}{3}\right]+\left[f(y+z)-\frac{k(y+z)}{3}\right]\geqslant 0$ \\
+    $\therefore $\quad 只需满足：$f(x)-\frac{kx}{3}\geqslant 0$，即$\frac{e^{x}-e^{-x}-\frac{2kx}{3}}{2}\geqslant 0$即可 \\
+    令$\varphi (x)=e^{x}-e^{-x}-\frac{2kx}{3}$，$\varphi^{'}(x)=e^{x}+e^{-x}-\frac{2k}{3}$ \\
+    $\because $\quad $\varphi (0)=0$，且$\varphi^{'}(x)$递增 \quad $\therefore $\quad 只需满足$\varphi^{'}(0)\geqslant 0$ \\
+    $\therefore $\quad $\varphi^{'}(0)=2-\frac{2k}{3}\geqslant 0$ \\
+    $\therefore $\quad $k$的最大值为3
+\end{document}
